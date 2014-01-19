@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>VimWeekly</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>VimWeekly</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="gridbg">
+    <div class="container">
+      <h1 id="logo">vim-weekly</h1>
+      <br/>
+      <div class="row">
+        <div id="main" class="span10 offset1">
 
-<%= yield %>
+        <%= yield %>
 
+        <div class="row">
+          <div class="span10 footer">
+            <div class="row">
+              <div class="span6 contact">
+                <strong>Suggest vim tip:</strong> <em>on social media</em>
+              </div>
+
+              <div class="span3 social_icons">
+                <a href="#" class="twitter"><img src="/assets/socialicons/twitter.png" alt="twitter"/></a>
+                <a href="#" class="facebook"><img src="/assets/socialicons/facebook.png" alt="facebook"/></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end of .span10-->
+      <br/>
+    </div><!-- end of .row-->
+    <br/>
+    <div class="copyright center-align">
+      &copy; Vim Weekly - 2014 | <a href="#">About</a> | <a href="#">Archives</a>
+    </div>
+  </div> <!-- /container -->
+  &nbsp;
 </body>
 </html>
