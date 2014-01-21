@@ -1,0 +1,21 @@
+<div class="row" >
+  <div class="span10 pagination-centered">
+    <div class="div-on-left">
+    <h3>Admin Panel</h3>
+      <div class="panel-body">
+       <%= form_for(:session, url: sessions_path)  do |f| %>
+           <%= f.text_field(:email, placeholder: "email")%>
+
+           <br />
+           <%= f.password_field(:password, placeholder: "password")%>
+
+           <br />
+           <%= f.submit "Sign in", class: "btn btn-success" %>
+       <% end %>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -9,10 +9,14 @@
   </head>
   <body class="gridbg">
     <div class="container">
-      <h1 id="logo">vim-weekly</h1>
+      <a id="header" href="/"><h1 id="logo">vim-weekly</h1></a>
       <br/>
       <div class="row">
         <div id="main" class="span10 offset1">
+
+      <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, :id => "flash#{name}" %>
+        <% end %>
 
         <%= yield %>
 
@@ -36,9 +40,10 @@
     </div><!-- end of .row-->
     <br/>
     <div class="copyright center-align">
-      &copy; Vim Weekly - 2014 | <a href="#">About</a> | <a href="#">Archives</a>
+      &copy; Vim Weekly - 2014 | <a href="/about">About</a> | <a href="/issues">Archives</a>
     </div>
   </div> <!-- /container -->
   &nbsp;
+  <%= debug(params) if Rails.env.development? %>
 </body>
 </html>

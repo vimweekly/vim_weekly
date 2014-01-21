@@ -448,6 +448,10 @@ a > small{
     text-align: right;    
 }
 
+.author{
+    float: right;
+}
+
 .social_icons a{
     display: inline-block;
     height: 24px;

@@ -1,5 +1,13 @@
 VimWeekly::Application.routes.draw do
-  root to: "articles#index"
-  get "about", to: "articles#about"
-  get "articles/issues"
+  
+  resources :admin
+  resources :issues
+  resources :sessions, only: [:new, :create, :destroy]
+
+  root to: "issues#home"
+
+  get "about", to: "issues#about"
+  get "new_entry", to: "issues#new_entry"
+  get "tawtaw", to: "sessions#new"
+
 end

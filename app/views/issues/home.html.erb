@@ -1,4 +1,3 @@
-
 <div class="row">
   <div class="span5">
     <div class="div-on-left">
@@ -8,16 +7,14 @@
       don't use. Every monday, we send 5 tips that can help boost your vim productivity
       you can think of it as one tip per day!</p>
       <br/>
-      <a href="archives.html" class="btn btn-success btn-large btn-wide">
+      <a href="/issues" class="btn btn-success btn-large btn-wide">
         View Archives<br/>
         <small>Past issues of vim-weekly</small>
       </a>
     </div>
   </div>
   <div class="span5">
-    <!-- can contain a video, image, etc-->
     <img src="/assets/vim-editor_logo.png" alt="code environment"/>
-    <!-- <iframe src="http://player.vimeo.com/video/1970676?title=0&amp;byline=0&amp;portrait=0" width="500" height="282"></iframe> -->
   </div> 
 </div><!-- end of inner .row-->
 
@@ -28,7 +25,7 @@
   <div class="span9 offset40px">
     <div class="well email-subscribe">
       <div id="mc_embed_signup" class="center-align">
-        <form action="http://pizzabox.us4.list-manage.com/subscribe/post?u=3b47a1485e96c3923dccb1e5a&amp;id=c6499cc83d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank">
+        <form action="http://tawheedraheem.us5.list-manage1.com/subscribe/post?u=6ad5cec1778231d2289e8a142&amp;id=e7b2432770" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank">
           <label for="mce-EMAIL">Already integrated with <em>MailChimp</em> accounts:</label>
           &nbsp;
           <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your e-mail address" >
@@ -43,22 +40,52 @@
 
 <br/>
 
-
+<!-- we need to use a partial here -->
 
 <div class="row">
   <div class="span10">
     <div class="div-on-left">
-      <h4><a href="Issue 1">Issue #1 — January 18, 2014</a></h4>
+      <h4><a href="Issue 1">Issue #<%= @tip.id %> — <%= @tip.release_date %></a></h4>
       <br/>
       <strong> <p>Tip 1</p></strong>
+      <p>
+        <%= @tip.tip1 %>
+      </p>
+      <div class="span3 author">
+        <p> <strong>Author: </strong> Marcus Camby </p>
+      </div>
       <br/>
       <strong> <p>Tip 2</p></strong>
+      <p>
+        <%= @tip.tip2 %>
+      </p>
+      <div class="span3 author">
+        <p> <strong>Author: </strong> Marcus Camby </p>
+      </div>
       <br/>
       <strong> <p>Tip 3</p></strong>
+      <p>
+        <%= @tip.tip3 %>
+      </p>
+      <div class="span3 author">
+        <p> <strong>Author: </strong> Marcus Camby </p>
+      </div>
       <br/>
       <strong> <p>Tip 4</p></strong>
+      <p>
+        <%= @tip.tip4 %>
+      </p>
+      <div class="span3 author">
+        <p> <strong>Author: </strong> Marcus Camby </p>
+      </div>
       <br/>
       <strong> <p>Tip 5</p></strong>
+      <p>
+        <%= @tip.tip5 %>
+      </p>
+      <div class="span3 author">
+        <p> <strong>Author: </strong> Marcus Camby </p>
+      </div>
       <br/>
     </div>
   </div>
