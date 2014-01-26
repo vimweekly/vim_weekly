@@ -8,6 +8,8 @@ VimWeekly::Application.routes.draw do
 
   get "about", to: "issues#about"
   get "new_entry", to: "issues#new_entry"
+
   get "tawtaw", to: "sessions#new"
+  get "signout", to: "sessions#destroy"
 
 end

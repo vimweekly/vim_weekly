@@ -45,48 +45,7 @@
 <div class="row">
   <div class="span10">
     <div class="div-on-left">
-      <h4><a href="Issue 1">Issue #<%= @tip.id %> — <%= @tip.release_date %></a></h4>
-      <br/>
-      <strong> <p>Tip 1</p></strong>
-      <p>
-        <%= @tip.tip1 %>
-      </p>
-      <div class="span3 author">
-        <p> <strong>Author: </strong> Marcus Camby </p>
-      </div>
-      <br/>
-      <strong> <p>Tip 2</p></strong>
-      <p>
-        <%= @tip.tip2 %>
-      </p>
-      <div class="span3 author">
-        <p> <strong>Author: </strong> Marcus Camby </p>
-      </div>
-      <br/>
-      <strong> <p>Tip 3</p></strong>
-      <p>
-        <%= @tip.tip3 %>
-      </p>
-      <div class="span3 author">
-        <p> <strong>Author: </strong> Marcus Camby </p>
-      </div>
-      <br/>
-      <strong> <p>Tip 4</p></strong>
-      <p>
-        <%= @tip.tip4 %>
-      </p>
-      <div class="span3 author">
-        <p> <strong>Author: </strong> Marcus Camby </p>
-      </div>
-      <br/>
-      <strong> <p>Tip 5</p></strong>
-      <p>
-        <%= @tip.tip5 %>
-      </p>
-      <div class="span3 author">
-        <p> <strong>Author: </strong> Marcus Camby </p>
-      </div>
-      <br/>
+      <%= render 'issue' %>
     </div>
   </div>
 </div>

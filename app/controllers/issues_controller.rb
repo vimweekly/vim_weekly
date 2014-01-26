@@ -1,4 +1,6 @@
 class IssuesController < ApplicationController
+  before_filter :signed_in_admin, only: [:new_entry, :create]
+
   def new
   end
 
@@ -8,7 +10,6 @@ class IssuesController < ApplicationController
 
   def create
     @new_entry = Issues.new(issue_param)
-    puts "Tawheed #{params[:issues]}"
     if @new_entry.save
       flash[:success] = "New entry added"
       redirect_to root_url
@@ -24,7 +25,7 @@ class IssuesController < ApplicationController
       # whatsover, we simply save each entry by dimacating
       # its use to that particular, this method on the other
       # hand extracts the data in a format that we can use
-      @archive = Issues.find(params[:id]) 
+      @issue = Issues.find(params[:id]) 
       #single_week_entry = @archive.select { |key, value| key.to_s.match(/^tip\d+/) }
       #single_week_entry.each do |key, value|
         #@tip_number = key
@@ -48,7 +49,7 @@ class IssuesController < ApplicationController
   end
 
   def home
-    @tip = Issues.last
+    @issue = Issues.last
   end
 
   private
@@ -57,4 +58,7 @@ class IssuesController < ApplicationController
                                      :tip4, :tip5, :release_date)
     end
 
+    def signed_in_admin
+      redirect_to root_path unless signed_in?
+    end
 end

@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
+
   def index
   end
 
@@ -17,4 +18,5 @@ class AdminController < ApplicationController
       render "new"
     end
   end
+
 end

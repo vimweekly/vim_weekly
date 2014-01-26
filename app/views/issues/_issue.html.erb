@@ -1,19 +1,43 @@
-<div class="row">
-  <div class="span10">
-    <div class="div-on-left">
-      <h4><a href="Issue 1">Issue #<%= @archive.id %> — <%= @archive.release_date %></a></h4>
-      <br/>
-      <strong> <p><%= @tip_number %></p></strong>
-      <br/>
-      <strong> <p>Tip 2</p></strong>
-      <br/>
-      <strong> <p>Tip 3</p></strong>
-      <br/>
-      <strong> <p>Tip 4</p></strong>
-      <br/>
-      <strong> <p>Tip 5</p></strong>
-      <br/>
-    </div>
-  </div>
+<h4><a href="">Issue #<%= @issue.id %> — <%= @issue.release_date %></a></h4>
+<h4>Lorem <%= link_to @issue.id, @issue %></h4>
+<br/>
+<strong> <p>Tip 1</p></strong>
+<p>
+<%= @issue.tip1 %>
+</p>
+<div class="span3 author">
+  <p> <strong>Author: </strong> Marcus Camby </p>
 </div>
-<%= @archive.inspect %>
+<br/>
+<strong> <p>Tip 2</p></strong>
+<p>
+<%= @issue.tip2 %>
+</p>
+<div class="span3 author">
+  <p> <strong>Author: </strong> Marcus Camby </p>
+</div>
+<br/>
+<strong> <p>Tip 3</p></strong>
+<p>
+<%= @issue.tip3 %>
+</p>
+<div class="span3 author">
+  <p> <strong>Author: </strong> Marcus Camby </p>
+</div>
+<br/>
+<strong> <p>Tip 4</p></strong>
+<p>
+<%= @issue.tip4 %>
+</p>
+<div class="span3 author">
+  <p> <strong>Author: </strong> Marcus Camby </p>
+</div>
+<br/>
+<strong> <p>Tip 5</p></strong>
+<p>
+<%= @issue.tip5 %>
+</p>
+<div class="span3 author">
+  <p> <strong>Author: </strong> Marcus Camby </p>
+</div>
+<br/>
