@@ -6,6 +6,17 @@
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+    <style type="text/css">
+    <!--
+    pre { white-space: pre-wrap; font-family: monospace; color: #d0d0d0; background-color: #121212; }
+    .Operator { color: #d7005f; }
+    .Comment { color: #5f5f5f; }
+    .Statement { color: #d7005f; font-weight: bold; }
+    .Delimiter { color: #626262; }
+    .Identifier { color: #ff8700; }
+    .issue_area { width: 850px; }
+    -->
+    </style>
   </head>
   <body class="gridbg">
     <div class="container">
@@ -26,12 +37,13 @@
           <div class="span10 footer">
             <div class="row">
               <div class="span6 contact">
-                <strong>Suggest vim tip:</strong> <em>on social media</em>
+                <strong>Got a vim tip worth sharing:</strong> send us an <a href="mailto:vim.weekly@gmail.com?Subject=Vim%20Tip%20Suggestion" target="_top">
+                  email </a> or tweet us!
               </div>
 
               <div class="span3 social_icons">
-                <a href="#" class="twitter"><img src="/assets/socialicons/twitter.png" alt="twitter"/></a>
-                <a href="#" class="facebook"><img src="/assets/socialicons/facebook.png" alt="facebook"/></a>
+<a href="https://twitter.com/intent/tweet?screen_name=vimweekly" class="twitter-mention-button" data-related="vimweekly">Tweet to @vimweekly</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
               </div>
             </div>
           </div>
@@ -42,7 +54,7 @@
     </div><!-- end of .row-->
     <br/>
     <div class="copyright center-align">
-      &copy; Vim Weekly - 2014 | <a href="/about">About</a> | <a href="/issues">Archives</a>
+      &copy; Vim Weekly - 2014 | <a href="/about">About</a> | <a href="#">Archives</a>
     </div>
   </div> <!-- /container -->
   &nbsp;

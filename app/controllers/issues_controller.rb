@@ -18,25 +18,10 @@ class IssuesController < ApplicationController
       render 'new_entry'
     end
   end
-  
+
   def show
     begin
-      # Because we don't have any fancy join tables or
-      # whatsover, we simply save each entry by dimacating
-      # its use to that particular, this method on the other
-      # hand extracts the data in a format that we can use
-      @issue = Issues.find(params[:id]) 
-      #single_week_entry = @archive.select { |key, value| key.to_s.match(/^tip\d+/) }
-      #single_week_entry.each do |key, value|
-        #@tip_number = key
-      #end
-      #db_content = @archive
-      #split_array = %w[headline: content: code:]
-      #words_regex = /(?:#{ Regexp.union(split_array).source })/i
-      #db_content.split(words_regex).map(&:strip)
-      #@headline = db_content[1]
-      #@content = db_content[2]
-      #@code = db_content[3]
+      @issue = db_swiss_knife(Issues.find(params[:id]))
     rescue ActiveRecord::RecordNotFound
       return render 'not_found'
     end
@@ -49,16 +34,38 @@ class IssuesController < ApplicationController
   end
 
   def home
-    @issue = Issues.last
+    @issue = db_swiss_knife(Issues.last)
   end
 
   private
-    def issue_param
-      params.require(:issues).permit(:tip1, :tip2, :tip3,
-                                     :tip4, :tip5, :release_date)
-    end
+  def issue_param
+    params.require(:issues).permit(:tip1, :tip2, :tip3,
+                                   :tip4, :tip5, :release_date)
+  end
 
-    def signed_in_admin
-      redirect_to root_path unless signed_in?
-    end
+  def signed_in_admin
+    redirect_to root_path unless signed_in?
+  end
+
+  # Because we don't have any fancy join tables or
+  # whatsover, we simply save each entry by dimacating
+  # its use to that particular, this method on the other
+  # hand extracts the data in a format that we can use
+  # this swiss knife method does the job by returning a hash
+  # of what we care about from the db
+  def db_swiss_knife(id)
+      Issues.find_by_id(id)
+      #single_week_entry = @archive.select { |key, value| key.to_s.match(/^tip\d+/) }
+      #single_week_entry.each do |key, value|
+      #@tip_number = key
+      #end
+      #db_content = @archive
+      #split_array = %w[headline: content: code:]
+      #words_regex = /(?:#{ Regexp.union(split_array).source })/i
+      #db_content.split(words_regex).map(&:strip)
+      #@headline = db_content[1]
+      #@content = db_content[2]
+      #@code = db_content[3]
+
+  end
 end

@@ -1,43 +1,69 @@
-<h4><a href="">Issue #<%= @issue.id %> — <%= @issue.release_date %></a></h4>
-<h4>Lorem <%= link_to @issue.id, @issue %></h4>
-<br/>
-<strong> <p>Tip 1</p></strong>
-<p>
-<%= @issue.tip1 %>
-</p>
-<div class="span3 author">
-  <p> <strong>Author: </strong> Marcus Camby </p>
+<div class="issue_area">
+  <h4><a href="">Issue #1 — January 27 2014</a></h4>
+  <br/>
+  <strong> <p>Tip 1</p></strong>
+  <p>
+  List the leafs in the tree of changes
+  </p>
+  <pre id='vimCodeElement'>
+  :undolist
+  :undol
+  </pre>
+  <div class="span3 author">
+    <p> <strong>Source: </strong> vim manual </p>
+  </div>
+  <br/>
+  <strong> <p>Tip 2</p></strong>
+  <p>
+  revert back to change number {N} - where N is a number in your undo list
+  </p>
+  <pre id='vimCodeElement'>
+  :undo <span class="Delimiter">{</span>N<span class="Delimiter">}</span>
+  </pre>
+  <div class="span3 author">
+    <p> <strong>Source: </strong> vim manual </p>
+  </div>
+  <br/>
+  <strong> <p>Tip 3</p></strong>
+  <p>
+  Go to older text state {N} file writes before.
+  When changes were made since the last write
+  <code>:earlier 1f</code> will revert the text to the state when
+  it was written.  Otherwise it will go to the write
+  before that.  When at the state of the first file write, or when
+  the file was not written, ":earlier 1f" will go to
+  before the first change.
+  </p>
+  <pre id='vimCodeElement'>
+  :earlier <span class="Delimiter">{</span>N<span class="Delimiter">}</span><span class="Identifier">f</span>
+  </pre>
+  <div class="span3 author">
+    <p> <strong>Source: </strong> vim manual </p>
+  </div>
+  <br/>
+  <strong> <p>Tip 4</p></strong>
+  <p>
+  Go to newer text state {N} file writes later.
+  When at the state of the last file write, ":later 1f"
+  will go to the newest text state.
+  </p>
+  <pre id='vimCodeElement'>
+  :later <span class="Delimiter">{</span>N<span class="Delimiter">}</span><span class="Identifier">f</span>
+  </pre>
+  <div class="span3 author">
+    <p> <strong>Source: </strong> vim manual </p>
+  </div>
+  <br/>
+  <strong> <p>Tip 5</p></strong>
+  <p>
+  Navigating the change list
+  </p>
+  <pre id='vimCodeElement'>
+  <span class="Statement">g</span><span class="Operator">+</span> <span class="Comment">&quot;move forward in change list</span>
+  <span class="Statement">g</span><span class="Operator">-</span> <span class="Comment">&quot;move backwards in a change list</span>
+  </pre>
+  <div class="span3 author">
+    <p> <strong>Source: </strong> vim manual </p>
+  </div>
+  <br/>
 </div>
-<br/>
-<strong> <p>Tip 2</p></strong>
-<p>
-<%= @issue.tip2 %>
-</p>
-<div class="span3 author">
-  <p> <strong>Author: </strong> Marcus Camby </p>
-</div>
-<br/>
-<strong> <p>Tip 3</p></strong>
-<p>
-<%= @issue.tip3 %>
-</p>
-<div class="span3 author">
-  <p> <strong>Author: </strong> Marcus Camby </p>
-</div>
-<br/>
-<strong> <p>Tip 4</p></strong>
-<p>
-<%= @issue.tip4 %>
-</p>
-<div class="span3 author">
-  <p> <strong>Author: </strong> Marcus Camby </p>
-</div>
-<br/>
-<strong> <p>Tip 5</p></strong>
-<p>
-<%= @issue.tip5 %>
-</p>
-<div class="span3 author">
-  <p> <strong>Author: </strong> Marcus Camby </p>
-</div>
-<br/>
