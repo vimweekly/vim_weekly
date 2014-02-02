@@ -14,6 +14,7 @@ gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'bcrypt-ruby', '3.1.2'
+gem 'database_cleaner'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -1,25 +1,28 @@
 <h1 class="div-on-left">Archives</h1>
 <div class="row">
-<% @issues.each_with_index do |(key, value), index| %>
   <!-- If it is an even issue, display it in the left column
   else display it in the right colum-->
-  <% if (index % 2 == 0) %>
     <div class="span5">
     <div class="div-on-left">
-  <% else %>
+    <h4><a href="Issue 1">Issue #1 — November 12, 2010</a></h4>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
     </div>
-    <div class="span5">
-  <% end %>
-  <h4><a href="Issue 1">Issue #1 — November 12, 2010</a></h4>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
-  <br/>
-
   </div>
-<% end %>
+    <div class="span5">
+    <h4><a href="Issue 1">Issue #1 — November 12, 2010</a></h4>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    </div>
+  <br/>
 </div> <!-- end of row -->

@@ -5,11 +5,16 @@ class IssuesController < ApplicationController
   end
 
   def index
-    @issues = Issues.all
+    @issues = Issue.all
+  respond_to do |format|
+    format.html
+    format.xml { render xml: @issues }
+    format.json { render json: @issues }
+  end
   end
 
   def create
-    @new_entry = Issues.new(issue_param)
+    @new_entry = Issue.new(issue_param)
     if @new_entry.save
       flash[:success] = "New entry added"
       redirect_to root_url
@@ -21,7 +26,8 @@ class IssuesController < ApplicationController
 
   def show
     begin
-      @issue = db_swiss_knife(Issues.find(params[:id]))
+      @issue = Issue.find(params[:id])
+      issue_db_values(params[:id])
     rescue ActiveRecord::RecordNotFound
       return render 'not_found'
     end
@@ -34,38 +40,24 @@ class IssuesController < ApplicationController
   end
 
   def home
-    @issue = db_swiss_knife(Issues.last)
+    @issue = Issue.last
+    issue_db_values(Issue.last.id)
+  end
+
+  def issue_db_values(id)
+    @issue_number = id
+    @issue_release_date = Issue.find(@issue_number).release_date
+    @tip_val = Issue.find(id).tip
   end
 
   private
+  # This is to allow mass assignment
   def issue_param
-    params.require(:issues).permit(:tip1, :tip2, :tip3,
-                                   :tip4, :tip5, :release_date)
+    params.require(:tip).permit(:author, :code, :summary,
+                                :description)
   end
 
   def signed_in_admin
     redirect_to root_path unless signed_in?
-  end
-
-  # Because we don't have any fancy join tables or
-  # whatsover, we simply save each entry by dimacating
-  # its use to that particular, this method on the other
-  # hand extracts the data in a format that we can use
-  # this swiss knife method does the job by returning a hash
-  # of what we care about from the db
-  def db_swiss_knife(id)
-      Issues.find_by_id(id)
-      #single_week_entry = @archive.select { |key, value| key.to_s.match(/^tip\d+/) }
-      #single_week_entry.each do |key, value|
-      #@tip_number = key
-      #end
-      #db_content = @archive
-      #split_array = %w[headline: content: code:]
-      #words_regex = /(?:#{ Regexp.union(split_array).source })/i
-      #db_content.split(words_regex).map(&:strip)
-      #@headline = db_content[1]
-      #@content = db_content[2]
-      #@code = db_content[3]
-
   end
 end
