@@ -5,7 +5,9 @@ class IssuesController < ApplicationController
   end
 
   def index
-    @issues = Issue.all
+    # put desc in the order clause if you change your mind
+    @issues = Tip.joins("INNER JOIN issues on issue_id = issues.id")
+              .select("tips.summary, issues.*, issues.id").order("issue_id desc")
   respond_to do |format|
     format.html
     format.xml { render xml: @issues }

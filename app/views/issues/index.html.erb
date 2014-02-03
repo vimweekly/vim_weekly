@@ -1,28 +1,31 @@
 <h1 class="div-on-left">Archives</h1>
+
 <div class="row">
-  <!-- If it is an even issue, display it in the left column
-  else display it in the right colum-->
-    <div class="span5">
+  <div class="span5">
+    <% position_counter = 0 %>
+  <% if position_counter.even? %>
     <div class="div-on-left">
-    <h4><a href="Issue 1">Issue #1 — November 12, 2010</a></h4>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+  <% end %>
+<% 
+  id = 0 
+  @issues.each do |x|
+    if (id != x.id)
+  %>
+  <h4><a href="issues/<%= x.id %>">Issue # <%= x.id %> — <%= x['release_date'] %></a></h4>
+  <% 
+     id = x.id
+     position_counter +=1
+    end
+  %>
+<ul>
+  <li>
+  <%= x.summary %>
+  </li>
+</ul>
+  <% end %>
+    <% if position_counter.even? %>
     </div>
+    <% end %>
   </div>
-    <div class="span5">
-    <h4><a href="Issue 1">Issue #1 — November 12, 2010</a></h4>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    </div>
-  <br/>
+  <br />
 </div> <!-- end of row -->
