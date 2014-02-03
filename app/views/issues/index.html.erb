@@ -1,11 +1,7 @@
 <h1 class="div-on-left">Archives</h1>
-
 <div class="row">
   <div class="span5">
-    <% position_counter = 0 %>
-  <% if position_counter.even? %>
     <div class="div-on-left">
-  <% end %>
 <% 
   id = 0 
   @issues.each do |x|
@@ -23,9 +19,7 @@
   </li>
 </ul>
   <% end %>
-    <% if position_counter.even? %>
     </div>
-    <% end %>
   </div>
   <br />
 </div> <!-- end of row -->
