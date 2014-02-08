@@ -7,12 +7,12 @@ class IssuesController < ApplicationController
   def index
     # put desc in the order clause if you change your mind
     @issues = Tip.joins("INNER JOIN issues on issue_id = issues.id")
-              .select("tips.summary, issues.*, issues.id").order("issue_id desc")
-  respond_to do |format|
-    format.html
-    format.xml { render xml: @issues }
-    format.json { render json: @issues }
-  end
+    .select("tips.summary, tips.id, issues.*, issues.id").order("issue_id desc")
+    respond_to do |format|
+      format.html
+      format.xml  { render "index.xml.erb", :content_type => 'application/xml' }
+      format.json  { render "index.json.erb", :content_type => 'application/json' }
+    end
   end
 
   def create

@@ -12,4 +12,6 @@ VimWeekly::Application.routes.draw do
   get "tawtaw", to: "sessions#new"
   get "signout", to: "sessions#destroy"
 
+  get "issues", to: "issues#index"
+
 end

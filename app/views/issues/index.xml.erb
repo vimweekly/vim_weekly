@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Vim Weekly</title>
+    <link>http://www.vimweekly.com/</link>
+    <description>5 vim tips every Mondays</description>
+    <% @issues.each do |val| %>
+      <item>
+        <summary><%= val.summary %></summary>
+        <code>:puts hello_w</code>
+        <pubDate><%= val['release_date']  %></pubDate>
+        <description>I am an awesome tip </description>
+      </item>
+    <% end %>
+  </channel>
+</rss>
