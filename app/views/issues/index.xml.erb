@@ -7,7 +7,7 @@
     <% @issues.each do |val| %>
       <item>
         <summary><%= val.summary %></summary>
-        <code>:puts hello_w</code>
+        <code><%= val.code %></code>
         <pubDate><%= val['release_date']  %></pubDate>
         <description>I am an awesome tip </description>
       </item>
