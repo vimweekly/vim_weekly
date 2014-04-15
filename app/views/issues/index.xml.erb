@@ -7,7 +7,7 @@
     <% @issues.each do |val| %>
       <item>
         <title><%= val.summary %></title>
-        <pubDate><%= val['release_date'] %></pubDate>
+        <pubDate><%= Date.parse(val['release_date']).rfc2822%></pubDate>
         <description>
           &lt;p&gt;&lt;code&gt;<%= val.code %>&lt;/code&gt;&lt;/p&gt;
           &lt;p&gt;<%= val.description %>&lt;/p&gt;
