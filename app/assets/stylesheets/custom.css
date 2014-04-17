@@ -521,3 +521,6 @@ a > small{
     color: black;
     text-decoration: none;
 }
+#mc-embedded-subscribe {
+  padding-left: 5px;
+}
