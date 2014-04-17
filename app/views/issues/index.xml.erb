@@ -6,10 +6,12 @@
     <description>5 vim tips every Mondays</description>
     <% @issues.each do |val| %>
       <item>
-        <summary><%= replace_special_chars val.summary.to_s %></summary>
+        <title><%= val.summary %></title>
         <pubDate><%= Date.parse(val['release_date']).rfc2822%></pubDate>
-        <code><%= replace_special_chars val.code.to_s %></code>
-        <description><%= replace_special_chars val.description.to_s %></description>
+        <description>
+          <%= replace_special_chars val.code.to_s %>
+        <%= replace_special_chars val.description.to_s %>
+        </description>
       </item>
     <% end %>
   </channel>
