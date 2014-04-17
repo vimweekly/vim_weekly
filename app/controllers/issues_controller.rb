@@ -52,6 +52,7 @@ class IssuesController < ApplicationController
     @tip_val = Issue.find(id).tip
   end
 
+
   private
   # This is to allow mass assignment
   def issue_param
